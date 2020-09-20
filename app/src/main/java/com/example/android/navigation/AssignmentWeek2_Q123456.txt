@@ -1,0 +1,64 @@
+﻿1. What is ​Inheritance​? Try to explain in Mandarin.
+繼承可使子類別(subclass)可使用繼承來的超類別(superclass)的所有特性。
+ex: Property, function，可省去大量定義相同程式碼，
+如果在superclass有將Property, function定義成open，
+在subclass可以依需求改寫superclass的Property, function。
+
+
+2. How to ​split​ a string in Android? 
+Explain your understanding, and even better to attachsome sample code.
+
+<1>
+可使用substring得到想要的string片段:
+    val originalText = "This is a String!"
+    var subStringText = originalText.substring(8, 16)
+可得到"String"
+
+<2>
+可使用split依設定好的patten分開string:
+    var originalText = "This is a String!"
+    var splitText = originalText.split(" ")
+    println(splitText)
+可得到依空白分開的字串list [This, is, a, String!]
+
+
+3. What kind of ​key-value​ pair collection do we use in Android? 
+Attach a sample code thatuses for-loop to print each key-value pair.
+
+for exampl: use Map or mutableMap ,
+A collection that holds pairs of objects (keys and values), key為唯一可用來得到所配對的value
+
+        var map = mapOf("key1" to 1, "key2" to 2, "key3" to 3, "key4" to 4)
+        var keylist = map.map { it.key }
+        for (item in keylist) {
+        println("We use the key ${keylist.indexOf(item)} and get the value ${map.getValue(item)}\n")
+
+
+4. What’s the ​difference​ between ArrayList and LinkedList? Try to explain in Mandarin.
+ArrayList是將資料從放在一個連續的記憶體，
+LinkedList除了記錄本身儲存的資料，還儲存前一筆與後一筆物件的reference，可以分散放在不同區塊的記憶體。
+
+如果需要頻繁取List內的資料，選擇ArrayList會比較好，他可以從他的(index)直接取資料，
+LinkedList則必須從開始的結點一路找到所要值的位置所以耗時。
+
+如果需要頻繁新增or刪除資料，則使用LinkedList較好，他指需要更改所以新增or刪除的資料其前後一筆資料所儲存的結點位置，
+用ArrayList的話新增or刪除資料後，還必須處理搬動新增or刪除資料之後的所有其他資料的位置index，效率較差。
+
+
+
+5. What are ​Value Type​ variables? List out the Value Type variables you know.
+
+Value type 為直接賦予值給變數，
+常見的基本形態有:Int, Short, Long, Float, Double, Boolean, Byte, Char, String
+Reference type 為變數創造一個指定形態的物件 or Class，再reference給予值。
+
+
+
+6. What’s the ​maximum​ value of ​Int​? 
+If you want to represent integers larger than the limit,what should you do instead of using int variables?
+
+Int is 32bit, the range of Int is -2147483647 ~ +2147483647 (-2^31 to +2^31-1)
+Use Long to instead Int, Long is 64bit signed integer.
+the range of Lont is (-2^63 to +2^63-1) 
+
+
