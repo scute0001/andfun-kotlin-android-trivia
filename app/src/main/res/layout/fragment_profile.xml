@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:context="com.example.android.navigation.">
+    <data>
+        <variable
+            name="myName"
+            type="com.example.android.navigation.MyName" />
+    </data>
+
+    <ScrollView android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/margin_layout"
+            android:layout_marginTop="@dimen/margin_layout"
+            android:layout_marginRight="@dimen/margin_layout">
+
+            <TextView
+                android:id="@+id/nameP_text"
+                style="@style/ProfileTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/name_string"
+                app:layout_constraintEnd_toStartOf="@+id/nicknameP_text"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageProfile" />
+
+            <ImageView
+                android:id="@+id/imageProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="250dp"
+                android:layout_marginTop="16dp"
+                android:contentDescription="@string/description_image"
+                android:scaleType="fitCenter"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/nori"/>
+
+            <TextView
+                android:id="@+id/nicknameP_text"
+                style="@style/ProfileTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/nickname_string"
+                app:layout_constraintBaseline_toBaselineOf="@+id/nameP_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/nameP_text" />
+
+            <TextView
+                android:id="@+id/nameV_text"
+                style="@style/ProfileInfoStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:text="@={myName.name}"
+                app:layout_constraintEnd_toStartOf="@+id/nicknameV_text"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nameP_text" />
+
+            <TextView
+                android:id="@+id/nicknameV_text"
+                style="@style/ProfileInfoStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@={myName.nickname}"
+                app:layout_constraintBaseline_toBaselineOf="@+id/nameV_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/nameV_text" />
+
+            <TextView
+                android:id="@+id/aboutmeP_text"
+                style="@style/ProfileTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/aboutMe_string"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nameV_text" />
+
+
+            <TextView
+                android:id="@+id/aboutMeV_text"
+                style="@style/ProfileAboutMeStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:gravity="start"
+                android:text="@string/aboutMeContent_string"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:lineSpacingMultiplier="1.2"
+                app:layout_constraintTop_toBottomOf="@+id/aboutmeP_text" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
